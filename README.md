@@ -1,2 +1,1 @@
-# shadow-ai
 # recall-ai
