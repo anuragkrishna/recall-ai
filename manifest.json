@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Recall Later",
+  "version": "1.0.0",
+  "description": "Save selected text with context to recall later.",
+  "permissions": ["storage", "contextMenus", "downloads"],
+  "options_page": "options.html",
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Recall Later" }
+}

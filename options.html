@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Recall Later Settings</title>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;margin:20px;max-width:640px}
+label{display:block;margin:10px 0 4px}
+input[type=text]{width:100%;padding:8px}
+.row{margin:12px 0}
+button{padding:8px 14px}
+</style>
+</head>
+<body>
+  <h2>Storage Settings</h2>
+  <div class="row">
+    <label>Folder under Downloads</label>
+    <input id="folder" type="text" placeholder="RecallAI">
+  </div>
+  <div class="row">
+    <label>File name</label>
+    <input id="filename" type="text" placeholder="clips.json">
+  </div>
+  <div class="row">
+    <label><input id="saveAs" type="checkbox"> Ask where to save (show dialog)</label>
+  </div>
+  <div class="row">
+    <label><input id="autoExport" type="checkbox"> Auto-export after each save</label>
+  </div>
+  <div class="row">
+    <button id="save">Save Settings</button>
+    <span id="status" style="margin-left:10px;color:#555"></span>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

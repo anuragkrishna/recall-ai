@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Recall Later</title>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;margin:10px;width:320px}
+.top{display:flex;gap:8px;margin-bottom:10px}
+.item{margin:8px 0;padding:8px;border:1px solid #ddd;border-radius:6px}
+.text{margin:4px 0}
+.meta{font-size:12px;color:#555}
+.actions{display:flex;gap:8px;margin-top:6px}
+button{font-size:12px;padding:4px 8px}
+</style>
+</head>
+<body>
+<div class="top">
+  <button id="export">Export now</button>
+  <button id="settings">Settings</button>
+</div>
+<div id="list"></div>
+<script src="popup.js"></script>
+</body>
+</html>
