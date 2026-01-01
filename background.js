@@ -10,7 +10,12 @@ function exportClipsIfEnabled() {
       const json = JSON.stringify(d.clips, null, 2);
       const filename = `${cfg.folder}/${cfg.filename}`;
       const blobUrl = URL.createObjectURL(new Blob([json], { type: "application/json" }));
-      chrome.downloads.download({ url: blobUrl, filename, saveAs: cfg.saveAs }, () => {
+      chrome.downloads.download({ 
+        url: blobUrl, 
+        filename, 
+        saveAs: cfg.saveAs,
+        conflictAction: 'overwrite'
+      }, () => {
         setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
       });
     });
