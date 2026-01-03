@@ -28,14 +28,13 @@ function exportClipsIfEnabled() {
     chrome.storage.local.get({ clips: [] }, d => {
       const json = JSON.stringify(d.clips, null, 2);
       const filename = `${cfg.folder}/${cfg.filename}`;
-      const blobUrl = URL.createObjectURL(new Blob([json], { type: "application/json" }));
+      // Use data URL instead of blob URL (service workers don't support createObjectURL)
+      const dataUrl = `data:application/json;charset=utf-8,${encodeURIComponent(json)}`;
       chrome.downloads.download({ 
-        url: blobUrl, 
+        url: dataUrl, 
         filename, 
         saveAs: cfg.saveAs,
         conflictAction: 'overwrite'
-      }, () => {
-        setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
       });
     });
   });
