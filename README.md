@@ -10,6 +10,7 @@ A Chrome extension that lets you save selected text with its page URL and manage
 - **Configurable export**: Choose folder under Downloads, file name, and whether to ask where to save
 - **Auto-export and manual export**: Export JSON after each save or on demand
 - **Automatic overwrite**: Exports automatically overwrite existing files (no merge prompts)
+- **Daily email summary**: Get a collated email of all items saved during the day at 9pm
 
 ## Installation
 
@@ -26,6 +27,8 @@ Open the extension Options page (click Settings button in popup or right-click e
 - **File name** (default: `clips.json`)
 - **Ask where to save** (shows a save dialog to pick any folder)
 - **Auto-export after each save** (enabled by default)
+- **Enable daily email at 9pm** (disabled by default)
+- **Email address** (required if daily email is enabled)
 
 ## Usage
 
@@ -43,6 +46,15 @@ Open the extension Options page (click Settings button in popup or right-click e
 - **Auto-export**: Runs after each save if enabled in Options
 - **Manual export**: Open the popup and click **"Export now"**
 - Files are automatically overwritten (no combine/merge prompts)
+
+### Daily Email Summary
+- **Automatic daily email**: At 9pm every day, if enabled, the extension will:
+  - Collect all pending items saved during the day
+  - Format them in an email
+  - Open your default email client with the email pre-filled
+  - You just need to click "Send"
+- **Configure**: Go to Options → Enable daily email and enter your email address
+- **Note**: The email opens in your default email client (Gmail, Outlook, etc.) - you need to send it manually
 
 ## Data Structure
 
@@ -97,3 +109,4 @@ The extension requires:
 - `storage` — To save clips in browser storage
 - `contextMenus` — To add "Recall Later" to right-click menu
 - `downloads` — To export JSON files
+- `alarms` — To schedule daily email at 9pm
